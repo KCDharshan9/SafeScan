@@ -1,0 +1,1301 @@
+test_name,source_path,family,rule,rule_name,severity,confidence,line,code,code_norm,code_len,n_alerts_in_file,gt_category,gt_real,gt_cwe,label
+BenchmarkTest00011,testcode/BenchmarkTest00011.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,47,"46 
+47 		sql = f'SELECT username from USERS where password = ?'
+48 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00012,testcode/BenchmarkTest00012.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,48,"47 
+48 		sql = f'SELECT username from USERS where password = ?'
+49 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00017,testcode/BenchmarkTest00017.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00017,testcode/BenchmarkTest00017.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00017,testcode/BenchmarkTest00017.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00017,testcode/BenchmarkTest00017.py,xxe-00,B318,blacklist,MEDIUM,HIGH,52,"51 
+52 			doc = xml.dom.minidom.parseString(bar, parser)
+53 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00027,testcode/BenchmarkTest00027.py,weakrand-00,B311,blacklist,LOW,HIGH,54,"53 		cookie = f'rememberMe{num}'
+54 		value = str(base64.b64encode(random.randbytes(32)))
+55 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00028,testcode/BenchmarkTest00028.py,weakrand-00,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00029,testcode/BenchmarkTest00029.py,weakrand-00,B311,blacklist,LOW,HIGH,56,"55 		cookie = f'rememberMe{num}'
+56 		value = str(random.randint(0, 2**32))
+57 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00030,testcode/BenchmarkTest00030.py,weakrand-00,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(random.randint(0, 2**32))
+53 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00031,testcode/BenchmarkTest00031.py,weakrand-00,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.randint(0, 2**32))
+52 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00073,testcode/BenchmarkTest00073.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,54,"53 			RESPONSE += (
+54 				eval(bar)
+55 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00074,testcode/BenchmarkTest00074.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,51,"50 		try:
+51 			exec(bar)
+52 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00075,testcode/BenchmarkTest00075.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,53,"52 		try:
+53 			exec(bar)
+54 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00078,testcode/BenchmarkTest00078.py,deserialization-00,B403,blacklist,LOW,HIGH,46,"45 
+46 		import pickle
+47 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00078,testcode/BenchmarkTest00078.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,53,"52 		try:
+53 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+54 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00099,testcode/BenchmarkTest00099.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,46,"45 
+46 		sql = f'SELECT username from USERS where password = \'{bar}\''
+47 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = \'{bar}\'' num con = helpers.db_sqlite.get_connection(),118,1,sqli,True,89,1
+BenchmarkTest00100,testcode/BenchmarkTest00100.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,45,"44 
+45 		sql = f'SELECT username from USERS where password = ?'
+46 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00114,testcode/BenchmarkTest00114.py,weakrand-00,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.getrandbits(32))
+48 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00115,testcode/BenchmarkTest00115.py,weakrand-00,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00116,testcode/BenchmarkTest00116.py,weakrand-00,B311,blacklist,LOW,HIGH,46,"45 		cookie = f'rememberMe{num}'
+46 		value = str(base64.b64encode(random.randbytes(32)))
+47 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00117,testcode/BenchmarkTest00117.py,weakrand-00,B311,blacklist,LOW,HIGH,50,"49 		cookie = f'rememberMe{num}'
+50 		value = str(random.random())[2:]
+51 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00156,testcode/BenchmarkTest00156.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,44,"43 			RESPONSE += (
+44 				eval(bar)
+45 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00157,testcode/BenchmarkTest00157.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,50,"49 			RESPONSE += (
+50 				eval(bar)
+51 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00158,testcode/BenchmarkTest00158.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,56,"55 			RESPONSE += (
+56 				eval(bar)
+57 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00159,testcode/BenchmarkTest00159.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,45,"44 		try:
+45 			exec(bar)
+46 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00160,testcode/BenchmarkTest00160.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,49,"48 		try:
+49 			exec(bar)
+50 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00161,testcode/BenchmarkTest00161.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,40,"39 		try:
+40 			exec(bar)
+41 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00162,testcode/BenchmarkTest00162.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,55,"54 		try:
+55 			exec(bar)
+56 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00163,testcode/BenchmarkTest00163.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00164,testcode/BenchmarkTest00164.py,deserialization-00,B403,blacklist,LOW,HIGH,40,"39 
+40 		import pickle
+41 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00164,testcode/BenchmarkTest00164.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,47,"46 		try:
+47 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+48 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00165,testcode/BenchmarkTest00165.py,cmdi-00,B404,blacklist,LOW,HIGH,45,"44 		import os
+45 		import subprocess
+46 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest00165,testcode/BenchmarkTest00165.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,57,"56 
+57 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+58 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest00166,testcode/BenchmarkTest00166.py,cmdi-00,B404,blacklist,LOW,HIGH,42,"41 		import platform
+42 		import subprocess
+43 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00166,testcode/BenchmarkTest00166.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,53,"52 		try:
+53 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+54 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00167,testcode/BenchmarkTest00167.py,cmdi-00,B404,blacklist,LOW,HIGH,42,"41 		import platform
+42 		import subprocess
+43 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00167,testcode/BenchmarkTest00167.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,53,"52 		try:
+53 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+54 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00168,testcode/BenchmarkTest00168.py,cmdi-00,B404,blacklist,LOW,HIGH,49,"48 		import platform
+49 		import subprocess
+50 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00168,testcode/BenchmarkTest00168.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,60,"59 		try:
+60 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+61 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00192,testcode/BenchmarkTest00192.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,51,"50 
+51 		sql = f'SELECT username from USERS where password = ?'
+52 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00204,testcode/BenchmarkTest00204.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00204,testcode/BenchmarkTest00204.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00204,testcode/BenchmarkTest00204.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00204,testcode/BenchmarkTest00204.py,xxe-00,B318,blacklist,MEDIUM,HIGH,52,"51 
+52 			doc = xml.dom.minidom.parseString(bar, parser)
+53 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00205,testcode/BenchmarkTest00205.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest00205,testcode/BenchmarkTest00205.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest00205,testcode/BenchmarkTest00205.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest00205,testcode/BenchmarkTest00205.py,xxe-00,B318,blacklist,MEDIUM,HIGH,53,"52 
+53 			doc = xml.dom.minidom.parseString(bar, parser)
+54 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,True,611,1
+BenchmarkTest00206,testcode/BenchmarkTest00206.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00206,testcode/BenchmarkTest00206.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00206,testcode/BenchmarkTest00206.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00206,testcode/BenchmarkTest00206.py,xxe-00,B318,blacklist,MEDIUM,HIGH,53,"52 
+53 			doc = xml.dom.minidom.parseString(bar, parser)
+54 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00220,testcode/BenchmarkTest00220.py,weakrand-00,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00221,testcode/BenchmarkTest00221.py,weakrand-00,B311,blacklist,LOW,HIGH,49,"48 		cookie = f'rememberMe{num}'
+49 		value = str(base64.b64encode(random.randbytes(32)))
+50 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00222,testcode/BenchmarkTest00222.py,weakrand-00,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.randint(0, 2**32))
+45 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00223,testcode/BenchmarkTest00223.py,weakrand-00,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.randint(0, 2**32))
+52 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00224,testcode/BenchmarkTest00224.py,weakrand-00,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.random())[2:]
+45 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00225,testcode/BenchmarkTest00225.py,weakrand-00,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.random())[2:]
+52 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00226,testcode/BenchmarkTest00226.py,weakrand-00,B311,blacklist,LOW,HIGH,46,"45 		cookie = f'rememberMe{num}'
+46 		value = str(random.random())[2:]
+47 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00227,testcode/BenchmarkTest00227.py,weakrand-00,B311,blacklist,LOW,HIGH,48,"47 		cookie = f'rememberMe{num}'
+48 		value = str(random.random())[2:]
+49 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00263,testcode/BenchmarkTest00263.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,51,"50 			RESPONSE += (
+51 				eval(bar)
+52 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00264,testcode/BenchmarkTest00264.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,44,"43 		try:
+44 			exec(bar)
+45 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00267,testcode/BenchmarkTest00267.py,cmdi-00,B404,blacklist,LOW,HIGH,43,"42 		import os
+43 		import subprocess
+44 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest00267,testcode/BenchmarkTest00267.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,55,"54 
+55 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+56 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest00268,testcode/BenchmarkTest00268.py,cmdi-00,B404,blacklist,LOW,HIGH,43,"42 		import os
+43 		import subprocess
+44 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest00268,testcode/BenchmarkTest00268.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,55,"54 
+55 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+56 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest00269,testcode/BenchmarkTest00269.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,44,"43 		try:
+44 			yobj = yaml.load(bar, Loader=yaml.Loader)
+45 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,True,502,1
+BenchmarkTest00270,testcode/BenchmarkTest00270.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,41,"40 		try:
+41 			yobj = yaml.load(bar, Loader=yaml.Loader)
+42 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,True,502,1
+BenchmarkTest00283,testcode/BenchmarkTest00283.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,46,"45 
+46 		sql = f'SELECT username from USERS where password = \'{bar}\''
+47 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = \'{bar}\'' num con = helpers.db_sqlite.get_connection(),118,1,sqli,True,89,1
+BenchmarkTest00284,testcode/BenchmarkTest00284.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,44,"43 
+44 		sql = f'SELECT username from USERS where password = \'{bar}\''
+45 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = \'{bar}\'' num con = helpers.db_sqlite.get_connection(),118,1,sqli,True,89,1
+BenchmarkTest00285,testcode/BenchmarkTest00285.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,49,"48 
+49 		sql = f'SELECT username from USERS where password = ?'
+50 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00286,testcode/BenchmarkTest00286.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,49,"48 
+49 		sql = f'SELECT username from USERS where password = ?'
+50 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00287,testcode/BenchmarkTest00287.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,53,"52 
+53 		sql = f'SELECT username from USERS where password = ?'
+54 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00291,testcode/BenchmarkTest00291.py,xxe-00,B408,blacklist,LOW,HIGH,47,"46 
+47 		import xml.dom.minidom
+48 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00291,testcode/BenchmarkTest00291.py,xxe-00,B406,blacklist,LOW,HIGH,48,"47 		import xml.dom.minidom
+48 		import xml.sax.handler
+49 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00291,testcode/BenchmarkTest00291.py,xxe-00,B317,blacklist,MEDIUM,HIGH,51,"50 		try:
+51 			parser = xml.sax.make_parser()
+52 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00291,testcode/BenchmarkTest00291.py,xxe-00,B318,blacklist,MEDIUM,HIGH,54,"53 
+54 			doc = xml.dom.minidom.parseString(bar, parser)
+55 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00292,testcode/BenchmarkTest00292.py,xxe-00,B408,blacklist,LOW,HIGH,47,"46 
+47 		import xml.dom.minidom
+48 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00292,testcode/BenchmarkTest00292.py,xxe-00,B406,blacklist,LOW,HIGH,48,"47 		import xml.dom.minidom
+48 		import xml.sax.handler
+49 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00292,testcode/BenchmarkTest00292.py,xxe-00,B317,blacklist,MEDIUM,HIGH,51,"50 		try:
+51 			parser = xml.sax.make_parser()
+52 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00292,testcode/BenchmarkTest00292.py,xxe-00,B318,blacklist,MEDIUM,HIGH,54,"53 
+54 			doc = xml.dom.minidom.parseString(bar, parser)
+55 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00293,testcode/BenchmarkTest00293.py,xxe-00,B408,blacklist,LOW,HIGH,42,"41 
+42 		import xml.dom.minidom
+43 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00293,testcode/BenchmarkTest00293.py,xxe-00,B406,blacklist,LOW,HIGH,43,"42 		import xml.dom.minidom
+43 		import xml.sax.handler
+44 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00293,testcode/BenchmarkTest00293.py,xxe-00,B317,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			parser = xml.sax.make_parser()
+47 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00293,testcode/BenchmarkTest00293.py,xxe-00,B318,blacklist,MEDIUM,HIGH,49,"48 
+49 			doc = xml.dom.minidom.parseString(bar, parser)
+50 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00294,testcode/BenchmarkTest00294.py,xxe-00,B408,blacklist,LOW,HIGH,44,"43 
+44 		import xml.dom.minidom
+45 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest00294,testcode/BenchmarkTest00294.py,xxe-00,B406,blacklist,LOW,HIGH,45,"44 		import xml.dom.minidom
+45 		import xml.sax.handler
+46 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest00294,testcode/BenchmarkTest00294.py,xxe-00,B317,blacklist,MEDIUM,HIGH,48,"47 		try:
+48 			parser = xml.sax.make_parser()
+49 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest00294,testcode/BenchmarkTest00294.py,xxe-00,B318,blacklist,MEDIUM,HIGH,52,"51 
+52 			doc = xml.dom.minidom.parseString(bar, parser)
+53 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,True,611,1
+BenchmarkTest00305,testcode/BenchmarkTest00305.py,weakrand-01,B311,blacklist,LOW,HIGH,53,"52 		cookie = f'rememberMe{num}'
+53 		value = str(random.getrandbits(32))
+54 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00308,testcode/BenchmarkTest00308.py,weakrand-01,B311,blacklist,LOW,HIGH,54,"53 		cookie = f'rememberMe{num}'
+54 		value = str(base64.b64encode(random.randbytes(32)))
+55 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00309,testcode/BenchmarkTest00309.py,weakrand-01,B311,blacklist,LOW,HIGH,53,"52 		cookie = f'rememberMe{num}'
+53 		value = str(random.random())[2:]
+54 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00342,testcode/BenchmarkTest00342.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,49,"48 			RESPONSE += (
+49 				eval(bar)
+50 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00343,testcode/BenchmarkTest00343.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,45,"44 			RESPONSE += (
+45 				eval(bar)
+46 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00344,testcode/BenchmarkTest00344.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,44,"43 			RESPONSE += (
+44 				eval(bar)
+45 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00345,testcode/BenchmarkTest00345.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,54,"53 			RESPONSE += (
+54 				eval(bar)
+55 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00346,testcode/BenchmarkTest00346.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,48,"47 		try:
+48 			exec(bar)
+49 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00347,testcode/BenchmarkTest00347.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00349,testcode/BenchmarkTest00349.py,deserialization-00,B403,blacklist,LOW,HIGH,46,"45 
+46 		import pickle
+47 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest00349,testcode/BenchmarkTest00349.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,53,"52 		try:
+53 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+54 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest00350,testcode/BenchmarkTest00350.py,cmdi-00,B404,blacklist,LOW,HIGH,47,"46 		import platform
+47 		import subprocess
+48 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest00350,testcode/BenchmarkTest00350.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,58,"57 		try:
+58 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+59 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest00381,testcode/BenchmarkTest00381.py,weakrand-01,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(random.getrandbits(32))
+53 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00382,testcode/BenchmarkTest00382.py,weakrand-01,B311,blacklist,LOW,HIGH,48,"47 		cookie = f'rememberMe{num}'
+48 		value = str(random.getrandbits(32))
+49 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00383,testcode/BenchmarkTest00383.py,weakrand-01,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00385,testcode/BenchmarkTest00385.py,weakrand-01,B311,blacklist,LOW,HIGH,56,"55 		cookie = f'rememberMe{num}'
+56 		value = str(random.randint(0, 2**32))
+57 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00422,testcode/BenchmarkTest00422.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,44,"43 			RESPONSE += (
+44 				eval(bar)
+45 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00423,testcode/BenchmarkTest00423.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,54,"53 			RESPONSE += (
+54 				eval(bar)
+55 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00424,testcode/BenchmarkTest00424.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00425,testcode/BenchmarkTest00425.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,43,"42 		try:
+43 			exec(bar)
+44 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00426,testcode/BenchmarkTest00426.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,57,"56 		try:
+57 			exec(bar)
+58 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00431,testcode/BenchmarkTest00431.py,cmdi-00,B404,blacklist,LOW,HIGH,40,"39 		import platform
+40 		import subprocess
+41 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00431,testcode/BenchmarkTest00431.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,51,"50 		try:
+51 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+52 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00432,testcode/BenchmarkTest00432.py,cmdi-00,B404,blacklist,LOW,HIGH,42,"41 		import platform
+42 		import subprocess
+43 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00432,testcode/BenchmarkTest00432.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,53,"52 		try:
+53 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+54 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00433,testcode/BenchmarkTest00433.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,46,"45 		try:
+46 			yobj = yaml.load(bar, Loader=yaml.Loader)
+47 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,True,502,1
+BenchmarkTest00454,testcode/BenchmarkTest00454.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,41,"40 
+41 		sql = f'SELECT username from USERS where password = \'{bar}\''
+42 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = \'{bar}\'' num con = helpers.db_sqlite.get_connection(),118,1,sqli,True,89,1
+BenchmarkTest00455,testcode/BenchmarkTest00455.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,43,"42 
+43 		sql = f'SELECT username from USERS where password = \'{bar}\''
+44 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = \'{bar}\'' num con = helpers.db_sqlite.get_connection(),118,1,sqli,True,89,1
+BenchmarkTest00459,testcode/BenchmarkTest00459.py,xxe-00,B408,blacklist,LOW,HIGH,44,"43 
+44 		import xml.dom.minidom
+45 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00459,testcode/BenchmarkTest00459.py,xxe-00,B406,blacklist,LOW,HIGH,45,"44 		import xml.dom.minidom
+45 		import xml.sax.handler
+46 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00459,testcode/BenchmarkTest00459.py,xxe-00,B317,blacklist,MEDIUM,HIGH,48,"47 		try:
+48 			parser = xml.sax.make_parser()
+49 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00459,testcode/BenchmarkTest00459.py,xxe-00,B318,blacklist,MEDIUM,HIGH,51,"50 
+51 			doc = xml.dom.minidom.parseString(bar, parser)
+52 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00460,testcode/BenchmarkTest00460.py,xxe-00,B408,blacklist,LOW,HIGH,37,"36 
+37 		import xml.dom.minidom
+38 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest00460,testcode/BenchmarkTest00460.py,xxe-00,B406,blacklist,LOW,HIGH,38,"37 		import xml.dom.minidom
+38 		import xml.sax.handler
+39 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest00460,testcode/BenchmarkTest00460.py,xxe-00,B317,blacklist,MEDIUM,HIGH,41,"40 		try:
+41 			parser = xml.sax.make_parser()
+42 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest00460,testcode/BenchmarkTest00460.py,xxe-00,B318,blacklist,MEDIUM,HIGH,45,"44 
+45 			doc = xml.dom.minidom.parseString(bar, parser)
+46 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,True,611,1
+BenchmarkTest00461,testcode/BenchmarkTest00461.py,xxe-00,B408,blacklist,LOW,HIGH,43,"42 
+43 		import xml.dom.minidom
+44 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00461,testcode/BenchmarkTest00461.py,xxe-00,B406,blacklist,LOW,HIGH,44,"43 		import xml.dom.minidom
+44 		import xml.sax.handler
+45 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00461,testcode/BenchmarkTest00461.py,xxe-00,B317,blacklist,MEDIUM,HIGH,47,"46 		try:
+47 			parser = xml.sax.make_parser()
+48 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00461,testcode/BenchmarkTest00461.py,xxe-00,B318,blacklist,MEDIUM,HIGH,51,"50 
+51 			doc = xml.dom.minidom.parseString(bar, parser)
+52 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00462,testcode/BenchmarkTest00462.py,xxe-00,B408,blacklist,LOW,HIGH,40,"39 
+40 		import xml.dom.minidom
+41 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest00462,testcode/BenchmarkTest00462.py,xxe-00,B406,blacklist,LOW,HIGH,41,"40 		import xml.dom.minidom
+41 		import xml.sax.handler
+42 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest00462,testcode/BenchmarkTest00462.py,xxe-00,B317,blacklist,MEDIUM,HIGH,44,"43 		try:
+44 			parser = xml.sax.make_parser()
+45 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest00462,testcode/BenchmarkTest00462.py,xxe-00,B318,blacklist,MEDIUM,HIGH,48,"47 
+48 			doc = xml.dom.minidom.parseString(bar, parser)
+49 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,True,611,1
+BenchmarkTest00473,testcode/BenchmarkTest00473.py,weakrand-01,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.getrandbits(32))
+45 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00476,testcode/BenchmarkTest00476.py,weakrand-01,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.random())[2:]
+45 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00503,testcode/BenchmarkTest00503.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,41,"40 			RESPONSE += (
+41 				eval(bar)
+42 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00504,testcode/BenchmarkTest00504.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,48,"47 			RESPONSE += (
+48 				eval(bar)
+49 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00507,testcode/BenchmarkTest00507.py,deserialization-00,B403,blacklist,LOW,HIGH,48,"47 
+48 		import pickle
+49 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00507,testcode/BenchmarkTest00507.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,55,"54 		try:
+55 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+56 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00508,testcode/BenchmarkTest00508.py,deserialization-00,B403,blacklist,LOW,HIGH,48,"47 
+48 		import pickle
+49 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest00508,testcode/BenchmarkTest00508.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,55,"54 		try:
+55 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+56 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest00509,testcode/BenchmarkTest00509.py,deserialization-00,B403,blacklist,LOW,HIGH,43,"42 
+43 		import pickle
+44 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest00509,testcode/BenchmarkTest00509.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,50,"49 		try:
+50 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+51 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest00510,testcode/BenchmarkTest00510.py,deserialization-00,B403,blacklist,LOW,HIGH,39,"38 
+39 		import pickle
+40 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00510,testcode/BenchmarkTest00510.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+47 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00511,testcode/BenchmarkTest00511.py,cmdi-00,B404,blacklist,LOW,HIGH,45,"44 		import os
+45 		import subprocess
+46 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest00511,testcode/BenchmarkTest00511.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,57,"56 
+57 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+58 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest00512,testcode/BenchmarkTest00512.py,cmdi-00,B404,blacklist,LOW,HIGH,45,"44 		import platform
+45 		import subprocess
+46 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest00512,testcode/BenchmarkTest00512.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,56,"55 		try:
+56 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+57 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest00513,testcode/BenchmarkTest00513.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,45,"44 		try:
+45 			yobj = yaml.load(bar, Loader=yaml.Loader)
+46 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,False,502,0
+BenchmarkTest00538,testcode/BenchmarkTest00538.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00538,testcode/BenchmarkTest00538.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00538,testcode/BenchmarkTest00538.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00538,testcode/BenchmarkTest00538.py,xxe-00,B318,blacklist,MEDIUM,HIGH,52,"51 
+52 			doc = xml.dom.minidom.parseString(bar, parser)
+53 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00539,testcode/BenchmarkTest00539.py,xxe-00,B408,blacklist,LOW,HIGH,42,"41 
+42 		import xml.dom.minidom
+43 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00539,testcode/BenchmarkTest00539.py,xxe-00,B406,blacklist,LOW,HIGH,43,"42 		import xml.dom.minidom
+43 		import xml.sax.handler
+44 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00539,testcode/BenchmarkTest00539.py,xxe-00,B317,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			parser = xml.sax.make_parser()
+47 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00539,testcode/BenchmarkTest00539.py,xxe-00,B318,blacklist,MEDIUM,HIGH,49,"48 
+49 			doc = xml.dom.minidom.parseString(bar, parser)
+50 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00540,testcode/BenchmarkTest00540.py,xxe-00,B408,blacklist,LOW,HIGH,50,"49 
+50 		import xml.dom.minidom
+51 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00540,testcode/BenchmarkTest00540.py,xxe-00,B406,blacklist,LOW,HIGH,51,"50 		import xml.dom.minidom
+51 		import xml.sax.handler
+52 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00540,testcode/BenchmarkTest00540.py,xxe-00,B317,blacklist,MEDIUM,HIGH,54,"53 		try:
+54 			parser = xml.sax.make_parser()
+55 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00540,testcode/BenchmarkTest00540.py,xxe-00,B318,blacklist,MEDIUM,HIGH,58,"57 
+58 			doc = xml.dom.minidom.parseString(bar, parser)
+59 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00541,testcode/BenchmarkTest00541.py,xxe-00,B408,blacklist,LOW,HIGH,42,"41 
+42 		import xml.dom.minidom
+43 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest00541,testcode/BenchmarkTest00541.py,xxe-00,B406,blacklist,LOW,HIGH,43,"42 		import xml.dom.minidom
+43 		import xml.sax.handler
+44 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest00541,testcode/BenchmarkTest00541.py,xxe-00,B317,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			parser = xml.sax.make_parser()
+47 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest00541,testcode/BenchmarkTest00541.py,xxe-00,B318,blacklist,MEDIUM,HIGH,50,"49 
+50 			doc = xml.dom.minidom.parseString(bar, parser)
+51 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,True,611,1
+BenchmarkTest00556,testcode/BenchmarkTest00556.py,weakrand-01,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00557,testcode/BenchmarkTest00557.py,weakrand-01,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.getrandbits(32))
+48 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00558,testcode/BenchmarkTest00558.py,weakrand-01,B311,blacklist,LOW,HIGH,56,"55 		cookie = f'rememberMe{num}'
+56 		value = str(random.getrandbits(32))
+57 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00560,testcode/BenchmarkTest00560.py,weakrand-01,B311,blacklist,LOW,HIGH,57,"56 		cookie = f'rememberMe{num}'
+57 		value = str(base64.b64encode(random.randbytes(32)))
+58 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00561,testcode/BenchmarkTest00561.py,weakrand-01,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.random())[2:]
+46 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00562,testcode/BenchmarkTest00562.py,weakrand-01,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(random.random())[2:]
+53 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00563,testcode/BenchmarkTest00563.py,weakrand-01,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.random())[2:]
+48 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00564,testcode/BenchmarkTest00564.py,weakrand-01,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.random())[2:]
+46 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00599,testcode/BenchmarkTest00599.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,48,"47 			RESPONSE += (
+48 				eval(bar)
+49 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00600,testcode/BenchmarkTest00600.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,52,"51 			RESPONSE += (
+52 				eval(bar)
+53 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00601,testcode/BenchmarkTest00601.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,44,"43 			RESPONSE += (
+44 				eval(bar)
+45 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00602,testcode/BenchmarkTest00602.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00603,testcode/BenchmarkTest00603.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,53,"52 		try:
+53 			exec(bar)
+54 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00605,testcode/BenchmarkTest00605.py,deserialization-00,B403,blacklist,LOW,HIGH,40,"39 
+40 		import pickle
+41 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00605,testcode/BenchmarkTest00605.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,47,"46 		try:
+47 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+48 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00606,testcode/BenchmarkTest00606.py,cmdi-00,B404,blacklist,LOW,HIGH,40,"39 		import platform
+40 		import subprocess
+41 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00606,testcode/BenchmarkTest00606.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,51,"50 		try:
+51 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+52 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00607,testcode/BenchmarkTest00607.py,cmdi-00,B404,blacklist,LOW,HIGH,43,"42 		import platform
+43 		import subprocess
+44 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,True,78,0
+BenchmarkTest00607,testcode/BenchmarkTest00607.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,54,"53 		try:
+54 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+55 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,True,78,1
+BenchmarkTest00608,testcode/BenchmarkTest00608.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,53,"52 		try:
+53 			yobj = yaml.load(bar, Loader=yaml.Loader)
+54 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,False,502,0
+BenchmarkTest00621,testcode/BenchmarkTest00621.py,weakrand-01,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(random.getrandbits(32))
+53 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00622,testcode/BenchmarkTest00622.py,weakrand-01,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(random.getrandbits(32))
+53 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00625,testcode/BenchmarkTest00625.py,weakrand-02,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(base64.b64encode(random.randbytes(32)))
+52 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00626,testcode/BenchmarkTest00626.py,weakrand-02,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00627,testcode/BenchmarkTest00627.py,weakrand-02,B311,blacklist,LOW,HIGH,57,"56 		cookie = f'rememberMe{num}'
+57 		value = str(random.random())[2:]
+58 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00628,testcode/BenchmarkTest00628.py,weakrand-02,B311,blacklist,LOW,HIGH,57,"56 		cookie = f'rememberMe{num}'
+57 		value = str(random.random())[2:]
+58 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00657,testcode/BenchmarkTest00657.py,deserialization-00,B403,blacklist,LOW,HIGH,46,"45 
+46 		import pickle
+47 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00657,testcode/BenchmarkTest00657.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,53,"52 		try:
+53 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+54 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00658,testcode/BenchmarkTest00658.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,53,"52 		try:
+53 			yobj = yaml.load(bar, Loader=yaml.Loader)
+54 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,False,502,0
+BenchmarkTest00678,testcode/BenchmarkTest00678.py,xxe-00,B408,blacklist,LOW,HIGH,39,"38 
+39 		import xml.dom.minidom
+40 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00678,testcode/BenchmarkTest00678.py,xxe-00,B406,blacklist,LOW,HIGH,40,"39 		import xml.dom.minidom
+40 		import xml.sax.handler
+41 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00678,testcode/BenchmarkTest00678.py,xxe-00,B317,blacklist,MEDIUM,HIGH,43,"42 		try:
+43 			parser = xml.sax.make_parser()
+44 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00678,testcode/BenchmarkTest00678.py,xxe-00,B318,blacklist,MEDIUM,HIGH,46,"45 
+46 			doc = xml.dom.minidom.parseString(bar, parser)
+47 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00679,testcode/BenchmarkTest00679.py,xxe-00,B408,blacklist,LOW,HIGH,44,"43 
+44 		import xml.dom.minidom
+45 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00679,testcode/BenchmarkTest00679.py,xxe-00,B406,blacklist,LOW,HIGH,45,"44 		import xml.dom.minidom
+45 		import xml.sax.handler
+46 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00679,testcode/BenchmarkTest00679.py,xxe-00,B317,blacklist,MEDIUM,HIGH,48,"47 		try:
+48 			parser = xml.sax.make_parser()
+49 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00679,testcode/BenchmarkTest00679.py,xxe-00,B318,blacklist,MEDIUM,HIGH,52,"51 
+52 			doc = xml.dom.minidom.parseString(bar, parser)
+53 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00688,testcode/BenchmarkTest00688.py,weakrand-02,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.getrandbits(32))
+48 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00689,testcode/BenchmarkTest00689.py,weakrand-02,B311,blacklist,LOW,HIGH,55,"54 		cookie = f'rememberMe{num}'
+55 		value = str(base64.b64encode(random.randbytes(32)))
+56 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00690,testcode/BenchmarkTest00690.py,weakrand-02,B311,blacklist,LOW,HIGH,50,"49 		cookie = f'rememberMe{num}'
+50 		value = str(random.randint(0, 2**32))
+51 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00728,testcode/BenchmarkTest00728.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,50,"49 			RESPONSE += (
+50 				eval(bar)
+51 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00729,testcode/BenchmarkTest00729.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,41,"40 		try:
+41 			exec(bar)
+42 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00730,testcode/BenchmarkTest00730.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,48,"47 		try:
+48 			exec(bar)
+49 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00734,testcode/BenchmarkTest00734.py,deserialization-00,B403,blacklist,LOW,HIGH,39,"38 
+39 		import pickle
+40 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00734,testcode/BenchmarkTest00734.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+47 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00735,testcode/BenchmarkTest00735.py,deserialization-00,B403,blacklist,LOW,HIGH,39,"38 
+39 		import pickle
+40 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00735,testcode/BenchmarkTest00735.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+47 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00736,testcode/BenchmarkTest00736.py,cmdi-00,B404,blacklist,LOW,HIGH,44,"43 		import platform
+44 		import subprocess
+45 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest00736,testcode/BenchmarkTest00736.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,55,"54 		try:
+55 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+56 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest00755,testcode/BenchmarkTest00755.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,42,"41 
+42 		sql = f'SELECT username from USERS where password = ?'
+43 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest00759,testcode/BenchmarkTest00759.py,xxe-00,B408,blacklist,LOW,HIGH,45,"44 
+45 		import xml.dom.minidom
+46 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00759,testcode/BenchmarkTest00759.py,xxe-00,B406,blacklist,LOW,HIGH,46,"45 		import xml.dom.minidom
+46 		import xml.sax.handler
+47 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00759,testcode/BenchmarkTest00759.py,xxe-00,B317,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			parser = xml.sax.make_parser()
+50 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00759,testcode/BenchmarkTest00759.py,xxe-00,B318,blacklist,MEDIUM,HIGH,53,"52 
+53 			doc = xml.dom.minidom.parseString(bar, parser)
+54 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00765,testcode/BenchmarkTest00765.py,weakrand-02,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00766,testcode/BenchmarkTest00766.py,weakrand-02,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.getrandbits(32))
+52 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00767,testcode/BenchmarkTest00767.py,weakrand-02,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00770,testcode/BenchmarkTest00770.py,weakrand-02,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00771,testcode/BenchmarkTest00771.py,weakrand-02,B311,blacklist,LOW,HIGH,49,"48 		cookie = f'rememberMe{num}'
+49 		value = str(base64.b64encode(random.randbytes(32)))
+50 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00772,testcode/BenchmarkTest00772.py,weakrand-02,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00773,testcode/BenchmarkTest00773.py,weakrand-02,B311,blacklist,LOW,HIGH,46,"45 		cookie = f'rememberMe{num}'
+46 		value = str(random.randint(0, 2**32))
+47 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00774,testcode/BenchmarkTest00774.py,weakrand-02,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.randint(0, 2**32))
+48 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest00775,testcode/BenchmarkTest00775.py,weakrand-02,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.random())[2:]
+45 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest00818,testcode/BenchmarkTest00818.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,49,"48 			RESPONSE += (
+49 				eval(bar)
+50 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00819,testcode/BenchmarkTest00819.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,39,"38 		try:
+39 			exec(bar)
+40 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00820,testcode/BenchmarkTest00820.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,41,"40 		try:
+41 			exec(bar)
+42 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00821,testcode/BenchmarkTest00821.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,49,"48 		try:
+49 			exec(bar)
+50 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00822,testcode/BenchmarkTest00822.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest00825,testcode/BenchmarkTest00825.py,deserialization-00,B403,blacklist,LOW,HIGH,40,"39 
+40 		import pickle
+41 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00825,testcode/BenchmarkTest00825.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,47,"46 		try:
+47 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+48 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00826,testcode/BenchmarkTest00826.py,deserialization-00,B403,blacklist,LOW,HIGH,45,"44 
+45 		import pickle
+46 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest00826,testcode/BenchmarkTest00826.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,52,"51 		try:
+52 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+53 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest00827,testcode/BenchmarkTest00827.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,43,"42 		try:
+43 			yobj = yaml.load(bar, Loader=yaml.Loader)
+44 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,True,502,1
+BenchmarkTest00850,testcode/BenchmarkTest00850.py,xxe-00,B408,blacklist,LOW,HIGH,47,"46 
+47 		import xml.dom.minidom
+48 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00850,testcode/BenchmarkTest00850.py,xxe-00,B406,blacklist,LOW,HIGH,48,"47 		import xml.dom.minidom
+48 		import xml.sax.handler
+49 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00850,testcode/BenchmarkTest00850.py,xxe-00,B317,blacklist,MEDIUM,HIGH,51,"50 		try:
+51 			parser = xml.sax.make_parser()
+52 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00850,testcode/BenchmarkTest00850.py,xxe-00,B318,blacklist,MEDIUM,HIGH,54,"53 
+54 			doc = xml.dom.minidom.parseString(bar, parser)
+55 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00851,testcode/BenchmarkTest00851.py,xxe-00,B408,blacklist,LOW,HIGH,51,"50 
+51 		import xml.dom.minidom
+52 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest00851,testcode/BenchmarkTest00851.py,xxe-00,B406,blacklist,LOW,HIGH,52,"51 		import xml.dom.minidom
+52 		import xml.sax.handler
+53 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest00851,testcode/BenchmarkTest00851.py,xxe-00,B317,blacklist,MEDIUM,HIGH,55,"54 		try:
+55 			parser = xml.sax.make_parser()
+56 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest00851,testcode/BenchmarkTest00851.py,xxe-00,B318,blacklist,MEDIUM,HIGH,59,"58 
+59 			doc = xml.dom.minidom.parseString(bar, parser)
+60 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest00859,testcode/BenchmarkTest00859.py,weakrand-02,B311,blacklist,LOW,HIGH,48,"47 		cookie = f'rememberMe{num}'
+48 		value = str(random.getrandbits(32))
+49 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00860,testcode/BenchmarkTest00860.py,weakrand-02,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.getrandbits(32))
+48 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest00863,testcode/BenchmarkTest00863.py,weakrand-02,B311,blacklist,LOW,HIGH,49,"48 		cookie = f'rememberMe{num}'
+49 		value = str(base64.b64encode(random.randbytes(32)))
+50 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest00890,testcode/BenchmarkTest00890.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,42,"41 			RESPONSE += (
+42 				eval(bar)
+43 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00891,testcode/BenchmarkTest00891.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,49,"48 			RESPONSE += (
+49 				eval(bar)
+50 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,True,94,1
+BenchmarkTest00892,testcode/BenchmarkTest00892.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,52,"51 			RESPONSE += (
+52 				eval(bar)
+53 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00893,testcode/BenchmarkTest00893.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,55,"54 			RESPONSE += (
+55 				eval(bar)
+56 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest00894,testcode/BenchmarkTest00894.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,43,"42 		try:
+43 			exec(bar)
+44 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,True,94,1
+BenchmarkTest00898,testcode/BenchmarkTest00898.py,deserialization-00,B403,blacklist,LOW,HIGH,42,"41 
+42 		import pickle
+43 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest00898,testcode/BenchmarkTest00898.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,49,"48 		try:
+49 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+50 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,True,502,1
+BenchmarkTest00899,testcode/BenchmarkTest00899.py,cmdi-00,B404,blacklist,LOW,HIGH,52,"51 		import os
+52 		import subprocess
+53 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest00899,testcode/BenchmarkTest00899.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,64,"63 
+64 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+65 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest00900,testcode/BenchmarkTest00900.py,cmdi-00,B404,blacklist,LOW,HIGH,48,"47 		import platform
+48 		import subprocess
+49 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest00900,testcode/BenchmarkTest00900.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,59,"58 		try:
+59 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+60 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest01021,testcode/BenchmarkTest01021.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,47,"46 
+47 		sql = f'SELECT username from USERS where password = ?'
+48 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest01024,testcode/BenchmarkTest01024.py,xxe-00,B408,blacklist,LOW,HIGH,44,"43 
+44 		import xml.dom.minidom
+45 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest01024,testcode/BenchmarkTest01024.py,xxe-00,B406,blacklist,LOW,HIGH,45,"44 		import xml.dom.minidom
+45 		import xml.sax.handler
+46 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest01024,testcode/BenchmarkTest01024.py,xxe-00,B317,blacklist,MEDIUM,HIGH,48,"47 		try:
+48 			parser = xml.sax.make_parser()
+49 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest01024,testcode/BenchmarkTest01024.py,xxe-00,B318,blacklist,MEDIUM,HIGH,51,"50 
+51 			doc = xml.dom.minidom.parseString(bar, parser)
+52 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest01025,testcode/BenchmarkTest01025.py,xxe-00,B408,blacklist,LOW,HIGH,42,"41 
+42 		import xml.dom.minidom
+43 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest01025,testcode/BenchmarkTest01025.py,xxe-00,B406,blacklist,LOW,HIGH,43,"42 		import xml.dom.minidom
+43 		import xml.sax.handler
+44 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest01025,testcode/BenchmarkTest01025.py,xxe-00,B317,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			parser = xml.sax.make_parser()
+47 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest01025,testcode/BenchmarkTest01025.py,xxe-00,B318,blacklist,MEDIUM,HIGH,50,"49 
+50 			doc = xml.dom.minidom.parseString(bar, parser)
+51 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest01040,testcode/BenchmarkTest01040.py,weakrand-03,B311,blacklist,LOW,HIGH,45,"44 		cookie = f'rememberMe{num}'
+45 		value = str(random.getrandbits(32))
+46 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest01041,testcode/BenchmarkTest01041.py,weakrand-03,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.getrandbits(32))
+52 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest01042,testcode/BenchmarkTest01042.py,weakrand-03,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.getrandbits(32))
+45 
+",num cookie = f'rememberme{num}' num value = str(random.getrandbits(num)) num,78,1,weakrand,True,330,1
+BenchmarkTest01044,testcode/BenchmarkTest01044.py,weakrand-03,B311,blacklist,LOW,HIGH,52,"51 		cookie = f'rememberMe{num}'
+52 		value = str(base64.b64encode(random.randbytes(32)))
+53 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest01045,testcode/BenchmarkTest01045.py,weakrand-03,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(base64.b64encode(random.randbytes(32)))
+48 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest01046,testcode/BenchmarkTest01046.py,weakrand-03,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.randint(0, 2**32))
+52 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest01047,testcode/BenchmarkTest01047.py,weakrand-03,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.randint(0, 2**32))
+52 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest01048,testcode/BenchmarkTest01048.py,weakrand-03,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.randint(0, 2**32))
+48 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest01049,testcode/BenchmarkTest01049.py,weakrand-03,B311,blacklist,LOW,HIGH,50,"49 		cookie = f'rememberMe{num}'
+50 		value = str(random.random())[2:]
+51 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest01050,testcode/BenchmarkTest01050.py,weakrand-03,B311,blacklist,LOW,HIGH,51,"50 		cookie = f'rememberMe{num}'
+51 		value = str(random.random())[2:]
+52 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest01096,testcode/BenchmarkTest01096.py,deserialization-00,B403,blacklist,LOW,HIGH,40,"39 
+40 		import pickle
+41 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest01096,testcode/BenchmarkTest01096.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,47,"46 		try:
+47 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+48 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest01097,testcode/BenchmarkTest01097.py,cmdi-00,B404,blacklist,LOW,HIGH,44,"43 		import platform
+44 		import subprocess
+45 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest01097,testcode/BenchmarkTest01097.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,55,"54 		try:
+55 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+56 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest01098,testcode/BenchmarkTest01098.py,cmdi-00,B404,blacklist,LOW,HIGH,42,"41 		import platform
+42 		import subprocess
+43 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest01098,testcode/BenchmarkTest01098.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,53,"52 		try:
+53 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+54 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest01099,testcode/BenchmarkTest01099.py,deserialization-00,B506,yaml_load,MEDIUM,HIGH,47,"46 		try:
+47 			yobj = yaml.load(bar, Loader=yaml.Loader)
+48 
+","num try: num yobj = yaml.load(bar, loader=yaml.loader) num",62,1,deserialization,False,502,0
+BenchmarkTest01122,testcode/BenchmarkTest01122.py,xxe-00,B408,blacklist,LOW,HIGH,48,"47 
+48 		import xml.dom.minidom
+49 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest01122,testcode/BenchmarkTest01122.py,xxe-00,B406,blacklist,LOW,HIGH,49,"48 		import xml.dom.minidom
+49 		import xml.sax.handler
+50 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest01122,testcode/BenchmarkTest01122.py,xxe-00,B317,blacklist,MEDIUM,HIGH,52,"51 		try:
+52 			parser = xml.sax.make_parser()
+53 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest01122,testcode/BenchmarkTest01122.py,xxe-00,B318,blacklist,MEDIUM,HIGH,55,"54 
+55 			doc = xml.dom.minidom.parseString(bar, parser)
+56 
+","num num doc = xml.dom.minidom.parsestring(bar, parser) num",61,4,xxe,False,611,0
+BenchmarkTest01128,testcode/BenchmarkTest01128.py,weakrand-03,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(base64.b64encode(random.randbytes(32)))
+48 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest01129,testcode/BenchmarkTest01129.py,weakrand-03,B311,blacklist,LOW,HIGH,50,"49 		cookie = f'rememberMe{num}'
+50 		value = str(random.randint(0, 2**32))
+51 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest01130,testcode/BenchmarkTest01130.py,weakrand-03,B311,blacklist,LOW,HIGH,47,"46 		cookie = f'rememberMe{num}'
+47 		value = str(random.random())[2:]
+48 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest01131,testcode/BenchmarkTest01131.py,weakrand-03,B311,blacklist,LOW,HIGH,46,"45 		cookie = f'rememberMe{num}'
+46 		value = str(random.random())[2:]
+47 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest01164,testcode/BenchmarkTest01164.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,43,"42 			RESPONSE += (
+43 				eval(bar)
+44 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest01165,testcode/BenchmarkTest01165.py,codeinj-00,B307,blacklist,MEDIUM,HIGH,56,"55 			RESPONSE += (
+56 				eval(bar)
+57 			)
+",num response += ( num eval(bar) num ),45,1,codeinj,False,94,0
+BenchmarkTest01166,testcode/BenchmarkTest01166.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,46,"45 		try:
+46 			exec(bar)
+47 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest01167,testcode/BenchmarkTest01167.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,47,"46 		try:
+47 			exec(bar)
+48 		except:
+",num try: num exec(bar) num except:,39,1,codeinj,False,94,0
+BenchmarkTest01172,testcode/BenchmarkTest01172.py,deserialization-00,B403,blacklist,LOW,HIGH,39,"38 
+39 		import pickle
+40 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest01172,testcode/BenchmarkTest01172.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			unpickled = pickle.loads(base64.urlsafe_b64decode(bar))
+47 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(bar)) num except:,85,2,deserialization,False,502,0
+BenchmarkTest01173,testcode/BenchmarkTest01173.py,cmdi-00,B404,blacklist,LOW,HIGH,40,"39 		import platform
+40 		import subprocess
+41 		import helpers.utils
+",num import platform num import subprocess num import helpers.utils,70,2,cmdi,False,78,0
+BenchmarkTest01173,testcode/BenchmarkTest01173.py,cmdi-00,B602,subprocess_popen_with_shell_equals_true,HIGH,HIGH,51,"50 		try:
+51 			proc = subprocess.run(argStr, shell=True, capture_output=True, encoding=""utf-8"")
+52 
+","num try: num proc = subprocess.run(argstr, shell=true, capture_output=true, encoding=""utf-num"") num",101,2,cmdi,False,78,0
+BenchmarkTest01185,testcode/BenchmarkTest01185.py,weakrand-03,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(base64.b64encode(random.randbytes(32)))
+45 
+",num cookie = f'rememberme{num}' num value = str(base64.b64encode(random.randbytes(num))) num,94,1,weakrand,True,330,1
+BenchmarkTest01188,testcode/BenchmarkTest01188.py,codeinj-00,B102,exec_used,MEDIUM,HIGH,38,"37 		try:
+38 			exec(param)
+39 		except:
+",num try: num exec(param) num except:,41,1,codeinj,True,94,1
+BenchmarkTest01191,testcode/BenchmarkTest01191.py,cmdi-00,B404,blacklist,LOW,HIGH,40,"39 		import os
+40 		import subprocess
+41 		import helpers.utils
+",num import os num import subprocess num import helpers.utils,64,2,cmdi,True,78,0
+BenchmarkTest01191,testcode/BenchmarkTest01191.py,cmdi-00,B603,subprocess_without_shell_equals_true,LOW,HIGH,52,"51 
+52 		proc = subprocess.run(argList, capture_output=True, encoding=""utf-8"")
+53 		RESPONSE += (
+","num num proc = subprocess.run(arglist, capture_output=true, encoding=""utf-num"") num response += (",98,2,cmdi,True,78,1
+BenchmarkTest01194,testcode/BenchmarkTest01194.py,weakrand-04,B311,blacklist,LOW,HIGH,40,"39 		cookie = f'rememberMe{num}'
+40 		value = str(random.randint(0, 2**32))
+41 
+","num cookie = f'rememberme{num}' num value = str(random.randint(num, num**num)) num",80,1,weakrand,True,330,1
+BenchmarkTest01199,testcode/BenchmarkTest01199.py,weakrand-04,B311,blacklist,LOW,HIGH,44,"43 		cookie = f'rememberMe{num}'
+44 		value = str(random.random())[2:]
+45 
+",num cookie = f'rememberme{num}' num value = str(random.random())[num:] num,75,1,weakrand,True,330,1
+BenchmarkTest01203,testcode/BenchmarkTest01203.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,38,"37 
+38 		sql = f'SELECT username from USERS where password = ?'
+39 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest01211,testcode/BenchmarkTest01211.py,xxe-00,B408,blacklist,LOW,HIGH,37,"36 
+37 		import xml.dom.minidom
+38 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,False,611,0
+BenchmarkTest01211,testcode/BenchmarkTest01211.py,xxe-00,B406,blacklist,LOW,HIGH,38,"37 		import xml.dom.minidom
+38 		import xml.sax.handler
+39 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,False,611,0
+BenchmarkTest01211,testcode/BenchmarkTest01211.py,xxe-00,B317,blacklist,MEDIUM,HIGH,41,"40 		try:
+41 			parser = xml.sax.make_parser()
+42 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,False,611,0
+BenchmarkTest01211,testcode/BenchmarkTest01211.py,xxe-00,B318,blacklist,MEDIUM,HIGH,44,"43 
+44 			doc = xml.dom.minidom.parseString(param, parser)
+45 
+","num num doc = xml.dom.minidom.parsestring(param, parser) num",63,4,xxe,False,611,0
+BenchmarkTest01212,testcode/BenchmarkTest01212.py,xxe-00,B408,blacklist,LOW,HIGH,37,"36 
+37 		import xml.dom.minidom
+38 		import xml.sax.handler
+",num num import xml.dom.minidom num import xml.sax.handler,60,4,xxe,True,611,0
+BenchmarkTest01212,testcode/BenchmarkTest01212.py,xxe-00,B406,blacklist,LOW,HIGH,38,"37 		import xml.dom.minidom
+38 		import xml.sax.handler
+39 
+",num import xml.dom.minidom num import xml.sax.handler num,60,4,xxe,True,611,0
+BenchmarkTest01212,testcode/BenchmarkTest01212.py,xxe-00,B317,blacklist,MEDIUM,HIGH,41,"40 		try:
+41 			parser = xml.sax.make_parser()
+42 			# all features are disabled by default
+",num try: num parser = xml.sax.make_parser() num # all features are disabled by default,92,4,xxe,True,611,0
+BenchmarkTest01212,testcode/BenchmarkTest01212.py,xxe-00,B318,blacklist,MEDIUM,HIGH,45,"44 
+45 			doc = xml.dom.minidom.parseString(param, parser)
+46 
+","num num doc = xml.dom.minidom.parsestring(param, parser) num",63,4,xxe,True,611,1
+BenchmarkTest01216,testcode/BenchmarkTest01216.py,deserialization-00,B403,blacklist,LOW,HIGH,39,"38 
+39 		import pickle
+40 		import base64
+",num num import pickle num import base64,42,2,deserialization,True,502,0
+BenchmarkTest01216,testcode/BenchmarkTest01216.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,46,"45 		try:
+46 			unpickled = pickle.loads(base64.urlsafe_b64decode(param))
+47 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(param)) num except:,87,2,deserialization,True,502,1
+BenchmarkTest01229,testcode/BenchmarkTest01229.py,sqli-00,B608,hardcoded_sql_expressions,MEDIUM,LOW,38,"37 
+38 		sql = f'SELECT username from USERS where password = ?'
+39 		con = helpers.db_sqlite.get_connection()
+",num num sql = f'select username from users where password = ?' num con = helpers.db_sqlite.get_connection(),110,1,sqli,False,89,0
+BenchmarkTest01230,testcode/BenchmarkTest01230.py,deserialization-00,B403,blacklist,LOW,HIGH,36,"35 
+36 		import pickle
+37 		import base64
+",num num import pickle num import base64,42,2,deserialization,False,502,0
+BenchmarkTest01230,testcode/BenchmarkTest01230.py,deserialization-00,B301,blacklist,MEDIUM,HIGH,43,"42 		try:
+43 			unpickled = pickle.loads(base64.urlsafe_b64decode(param))
+44 		except:
+",num try: num unpickled = pickle.loads(base64.urlsafe_b64decode(param)) num except:,87,2,deserialization,False,502,0
